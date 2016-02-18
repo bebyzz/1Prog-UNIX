@@ -1,0 +1,9 @@
+make the file executable with "chmod 777 find.sh" gives everyone permssion to excute the file
+
+format is ./find.sh [field] [search]
+
+find's posible fields include 
+	user
+	address
+	phone
+	email
