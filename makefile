@@ -1,2 +1,2 @@
 make:
-	./find.sh user J
+	./start.sh

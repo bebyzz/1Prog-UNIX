@@ -9,7 +9,7 @@ echo "(2)Add a new record"
 echo "(3)Update a record"
 echo "(4)Remove a reocrd"
 echo "(q)Quit"
-echo -n "Selection::"
+echo "Selection::\c"
 read choice
 
 case "$choice" in
@@ -20,9 +20,9 @@ case "$choice" in
 	echo "(a)Address"
 	echo "(p)Phone Number"
 	echo "(e)Email"
-	echo -n "Selection::"
+	echo "Selection::\c"
 	read what
-	echo -n "search term::"
+	echo "search term::\c"
 	read who
 	sh ./find.sh $what $who 
 	;;
@@ -44,7 +44,7 @@ q)
 	;;
 esac
 
-echo "Would you liek to continue? ('n' to quit anything else to continue)"
+echo "\nWould you like to continue? ('n' to quit anything else to continue)\n>\c"
 read choice
  
 if [ $choice = "n" ]; then
