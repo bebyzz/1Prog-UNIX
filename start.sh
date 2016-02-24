@@ -21,7 +21,10 @@ case "$choice" in
 	echo "(p)Phone Number"
 	echo "(e)Email"
 	echo -n "Selection::"
-	
+	read what
+	echo -n "search term::"
+	read who
+	sh ./find.sh $what $who 
 	;;
 2)
 	echo "launching Add a new record"
@@ -33,18 +36,19 @@ case "$choice" in
 	echo "launching Remove a record"
 	;;
 q)
-	echo "Quiting the program (clean)"
+	echo "Good bye (clean)"
 	exit 0
 	;;
 *)
 	echo "please select a valid option"
 	;;
 esac
-echo "would you like to continue? (y/n)"
 
-read choice 
-if [$choice == 'n']; then
-	echo "Good by(clean)"
+echo "Would you liek to continue? ('n' to quit anything else to continue)"
+read choice
+ 
+if [ $choice = "n" ]; then
+	echo "Good bye (clean)"
 	exit 0
 fi
 

@@ -43,19 +43,19 @@ function getemail
 
 
 #searches the appropriate colums
-if [[ "$1" = "user" ]] ; then 
+if [[ "$1" = "u" ]] ; then 
 #if [ $1 == "user" -o $1 -eq 1 ] then 
 	getuserid
 	
-elif [[ "$1" = "address" ]] ; then
+elif [[ "$1" = "a" ]] ; then
 #elif [ $1 == "address" -o $1 -eq 2 ] then
 	getaddress
 
-elif [[ "$1" = "phone" ]] ; then
+elif [[ "$1" = "p" ]] ; then
 #elif [ $1 == "phone" -o $1 -eq 3 ]; then
 	getphone
 
-elif [[ $1 = "email" ]] ; then
+elif [[ $1 = "e" ]] ; then
 #elif [ $1 == "email" -o $1 -eq 4 ]; then
 	getemail
 	
@@ -65,6 +65,11 @@ else
 fi 
 
 #prints out the matched lines
+if [ -z $records ]; then
+	echo "No matches found"
+	exit 2
+fi
+
 for i in $records; do
 	sed -n "$i"p db.dat
 done
