@@ -24,7 +24,7 @@ case "$choice" in
 	read what
 	echo "search term::\c"
 	read who
-	sh ./find.sh $what $who 
+	sh ./find.sh $what $who
 	;;
 2)
 	echo "launching Add a new record"
