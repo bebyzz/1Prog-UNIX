@@ -1,17 +1,16 @@
 #/bin/bash
 #find the user
 
+
 if [ $# -lt 2 ]; then
 	echo "Too few argumetns passed to "$0" "  1>&2
 	exit 1
-
-elif [ $# -ge 3 ]; then	
-	echo "Too many argumetns passed to "$0" " 1>&2
-	exit 2
-
 else
 	search=$2
 fi
+#
+#need to add the ability to have mulitple search terms then cross rerences where they both
+#show up so that you can find someone by my mulitple parameters
 
 function getuserid 
 {
