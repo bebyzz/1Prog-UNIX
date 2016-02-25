@@ -3,6 +3,15 @@
 #assuming $1 is the string we are trying to find
 #CASE SENSITIVE, deletes entire contents otherwise
 
+<<<<<<< HEAD
+=======
+if [ $# -ne 1 ]
+then
+	echo "Must enter only one argument"
+	exit 1
+fi
+
+>>>>>>> master
 #test if string is in file
 grep -q "$1" db.dat
 if [ $? -eq 0 ]
@@ -22,7 +31,11 @@ else
 	exit 1
 fi
 
+<<<<<<< HEAD
 
+=======
+#This might be helpful later on if we need more functions to add to the project.
+>>>>>>> master
 #function deleteempty
 #{
 	#delete empty lines in database
