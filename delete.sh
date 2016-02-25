@@ -28,7 +28,7 @@ else
 	exit 1
 fi
 
-
+#This might be helpful later on if we need more functions to add to the project.
 #function deleteempty
 #{
 	#delete empty lines in database
