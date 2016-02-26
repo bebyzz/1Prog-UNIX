@@ -16,7 +16,7 @@ if [ $? -eq 0 ]
 then
 	#find all instances of the string to be deleted	
 	grep -n "$1" db.dat
-	echo "Enter the line number of the entry you would like to delete"
+	echo "Enter the line number of one entry you would like to delete"
 	read line
 	#remove $line from the database file
 	sed -i "$line d" "db.dat"
