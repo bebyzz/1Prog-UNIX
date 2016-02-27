@@ -18,10 +18,19 @@ then
 	grep -n "$1" db.dat
 	echo "Enter the line number of the entry you would like to delete"
 	read line
-	#remove $line from the database file
-	sed -i "$line d" "db.dat"
-	echo "Entry removed from database."
-	exit 0
+	sed -n "$line p" "db.dat" > match.txt
+	grep -q "$1" match.txt
+	rm -f match.txt
+	if [ $? -ne 0 ]
+	then
+		echo "Line number entered does not match matched lines."
+		exit 1
+	else 
+		#remove $line from the database file
+		sed -i "$line d" "db.dat"
+		echo "Entry removed from database."
+		exit 0
+	fi
 else
 #if string is not found in file
 	echo "Not found in database."

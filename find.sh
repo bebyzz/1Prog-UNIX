@@ -1,16 +1,20 @@
 #/bin/bash
 #find the user
 
-
+#checks for valid arguments
+#needs to have atleast two arguemtns passed
 if [ $# -lt 2 ]; then
 	echo "Too few argumetns passed to "$0" "  1>&2
 	exit 1
 else
-	search=$2
+	for i in $@;do
+		#$1 is the search colum >$2 are search terms
+		if [ $i == $1 ];then 
+			continue
+		fi
+		search=$search" "$i
+	done
 fi
-#
-#need to add the ability to have mulitple search terms then cross rerences where they both
-#show up so that you can find someone by my mulitple parameters
 
 function getuserid 
 {
@@ -61,14 +65,15 @@ elif [[ $1 = "e" ]] ; then
 else
 	echo "Select 'user' 'address' 'phone' 'email'"	
 
-fi 
-
-#prints out the matched lines
+fi
+ 
+##final echo
+#if no record exists
 if [ -z $records ]; then
 	echo "No matches found"
 	exit 2
 fi
-
+#prints out the matched lines
 for i in $records; do
 	sed -n "$i"p db.dat
 done
