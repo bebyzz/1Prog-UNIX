@@ -8,6 +8,7 @@ echo "(1)Find a record"
 echo "(2)Add a new record"
 echo "(3)Update a record"
 echo "(4)Remove a reocrd"
+echo "(5)find email provider"
 echo "(q)Quit"
 echo -n "Selection::"
 read choice
@@ -34,6 +35,9 @@ case "$choice" in
 	;;
 4)
 	echo "launching Remove a record"
+	;;
+5)
+	echo "launching find email provider"
 	;;
 q)
 	echo "Good bye (clean)"

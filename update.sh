@@ -103,7 +103,7 @@ elif [ $choice -ne $choice ] 2>/dev/null ; then
 	echo please enter a number
 fi
 
-
+#prints the line
 sed -n 1p db.dat
 record=$(sed -n "$choice"p db.dat)
 echo $record
