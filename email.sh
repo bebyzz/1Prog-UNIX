@@ -43,19 +43,19 @@ echo "Please select the appropriate line number"
 read line
 
 record=$(sed -n "$line"p db.dat)
-echo $record
 
 email=$(echo $record| cut -d: -f4 | cut -d@ -f2)
 
 records=$(cut -d: -f4 db.dat | grep -n "$email" | cut -d: -f1)
-records=$(echo $records | sed s/7// )
+records=$(echo $records | sed s/$line// )
 
 if [ -z "$records" ]; then
 	echo "No one else has your email address"
 	exit 2
 fi
 #prints out the matched lines
-echo "these people have the same email provider as you"
+echo
+echo "These people have the same email provider as you"
 for i in $records; do
 	echo -n "$i:  "
 	sed -n "$i"p db.dat
