@@ -118,8 +118,11 @@ while true; do
 	
 	read input
 	
-	if [ $input = "u" -o  $input = "a" -o $input = "p" -o $input = "e" -o $input = "c"  ]; then
+	if [ $input = "u" -o  $input = "a" -o $input = "p" -o $input = "e" ]; then
 		break
+	elif [ $input = "c"] ; then
+		echo "leaving update (clean)"
+		exit 0 
 	fi
 	echo "Pleaes enter a valid input"
 
