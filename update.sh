@@ -114,7 +114,7 @@ while true; do
 	echo "(a) address"
 	echo "(p) phone number"
 	echo "(e) email address"
-	echo "(c cancel)"
+	echo "(c) cancel"
 	
 	read input
 	
@@ -132,7 +132,7 @@ while true; do
 	echo "what would you like to change it to?"
 	read update
 
-	if ! [ -z $update ]; then
+	if ! [ -z $update ] 2>/dev/null; then
 		break
 	fi
 done
@@ -159,7 +159,7 @@ fi
 sed s/"$replace"/"$update"/ db.dat > temp
 cp "temp" "db.dat"
 rm -f "temp"
-echo "updated recored"
+echo "updating recored"
 record=$(sed -n "$choice"p db.dat)
 echo "The record has been updated"
 sed -n "$choice"p db.dat
