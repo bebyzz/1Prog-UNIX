@@ -74,6 +74,7 @@ while true; do
 		exit 0
 	else	
 		echo "Pleaes enter a valid input"
+		echo -n ">"
 		read choice
 	fi
 
