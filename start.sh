@@ -28,16 +28,22 @@ case "$choice" in
 	sh ./find.sh $what $who
 	;;
 2)
-	echo "launching Add a new record"
+	echo "launching add.sh a new record"
+	./add.sh
 	;;
 3)
-	echo "launching Update a record "
+	echo "launching update.sh a record "
+	./update.sh
 	;;
 4)
-	echo "launching Remove a record"
+	echo "launching delete.sh a record"
+	echo "please type either the name, address, phone number, or email of the record you want to remove"
+	read delete
+	./delete.sh $delete
 	;;
 5)
 	echo "launching find email provider"
+	./email.sh
 	;;
 q)
 	echo "Good bye (clean)"
